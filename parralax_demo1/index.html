@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Demotje</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+    <body>
+        
+    <div id="container">
+        <div id="viewport">
+			<img src="img/zon.png" id="zon" />
+            <div class="parallax-layer" id="layer-1">
+				<img src="img/wolken.png" style="" />
+            </div>
+            <div class="parallax-layer">
+				<img src="img/vogels.png" style="" />
+            </div>				
+            <div class="parallax-layer">
+				<img src="img/alles.png" style="" />
+            </div>
+<!-- Door twee losse afbeeldingen gaan ze door elkaar heen.			
+            <div class="parallax-layer">
+				<img src="img/varkensstal.png" style="" />
+            </div>
+			<div class="parallax-layer">
+				<img src="img/debuytenhof.png" style="" />
+            </div>	-->
+        </div>
+    </div>        
+	<div id="log"></div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+   
+    <script src="js/jquery.parallax.min.js"></script>        
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+		
+			$(window).scroll(function()
+			{
+				var position = $(this).scrollLeft();
+				console.log(position);
+				$("div#log1").html(position);
+			});		
+		
+            // Declare parallax on layers
+
+            var windowHeight    = $(window).height();
+            var windowWidth     = $(window).width();
+            var $firstLayer     = $("#layer-1");
+            //console.log(-(windowWidth / 2) );
+            
+            $("#viewport img").height(windowHeight);
+            $("#viewport").height(windowHeight);
+            // The parralax
+            jQuery('.parallax-layer').parallax(
+				{
+					"xorigin": "center",
+					"yparallax": false,
+					"mouseport": jQuery("#viewport")
+				},
+				{
+					"xorigin": "left",
+				},
+				{
+					"xorigin": "center",
+				}
+			); 
+            setTimeout(function(){
+                //console.log($firstLayer);
+                $firstLayer.css("margin-left", "-683px").css("left", "30%");     
+            }, 500);
+            
+        });
+
+    </script>
+    </body>
+</html>
