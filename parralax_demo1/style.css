@@ -13,8 +13,23 @@ body { padding: 0; margin: 0; }
 	top: 0;
 	z-index: 25;
 }
+#layer-gras {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
 
-
+#layer-content {
+	position: relative;
+	width: 2000px;
+}
+	.content-wrapper {
+		position: absolute;
+		top: 0;
+	}
+	#layer-varkensstal {	left: 0; }
+	#layer-gaarde { left: 6%; }
+	#layer-buytenhof { left: 41%; }
 
 /* debug */
 #log { 
