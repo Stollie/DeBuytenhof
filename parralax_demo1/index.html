@@ -22,26 +22,36 @@
             <div class="parallax-layer">
 				<img src="img/alles.png" style="" />
             </div> -->
-<!-- Door twee losse afbeeldingen gaan ze door elkaar heen.			-->
             <div class="parallax-layer" id="layer-content">
 				<div id="layer-varkensstal" class="content-wrapper">
-					<img src="img/varkensstal2.png" />
+					<img src="img/varkensstal2.png" class="mapit" usemap="#varkensstal" />
 				</div>
-				<div  id="layer-gaarde" class="content-wrapper">
-					<img src="img/gaarde.png" />
+				<div  id="layer-gaarde" class="content-wrapper" >
+					<img src="img/gaarde.png" class="mapit" usemap="#Gaarde" />
 				</div>
 				<div id="layer-buytenhof" class="content-wrapper">
-					<img src="img/debuytenhof.png" />
+					<img src="img/debuytenhof.png" class="mapit" usemap="#debuytenhof" />
 				</div>				
-				
-				
             </div>
         </div>
     </div>        
-	<div id="log"></div>
+	<div id="log"><button id="mapit">Map it!</button></div>
+	
+
+	<map name="varkensstal">
+	  <area shape="poly" coords="186,2048,984,1778,980,1502,874,1506,882,1290,920,1294,664,954,6,1058,4,1962" href="#" alt="Varkens">
+	</map>
+	<map name="Gaarde">
+		<area shape="poly" coords="1340,2077,1393,2083,1705,1923,1933,1915,2133,1951,2149,1931,2153,1607,2301,1224,2311,1090,2203,1062,1974,1103,1925,1139,1885,1119,1917,955,1873,891,1741,871,1661,923,1561,915,1489,927,1475,1009,1541,1203,1609,1343,1617,1403,1584,1405,1521,1356,1519,1269,1445,1230,1381,1240,1295,1279,1232,1259,1172,1268,1164,1371,1246,1538,1281,1662,1298,1753,1335,1767" href="#">
+		<area shape="poly" coords="1718,1962,1952,1966,1958,2078,1716,2068" title="Gaarde"  href="#">
+	</map>
+	<map name="debuytenhof">
+		<area shape="poly" coords="412,1282,1158,912,1886,1252,1858,1300,1866,1906,496,1936,488,1286" href="#">
+	</map>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
    
-    <script src="js/jquery.parallax.min.js"></script>        
+    <script src="js/jquery.parallax.min.js"></script>
+	<script src="js/jquery.imagemapster.min.js"></script>   
     <script type="text/javascript">
 
         $(document).ready(function() {
@@ -81,8 +91,14 @@
                 $firstLayer.css("margin-left", "-683px").css("left", "30%");     
             }, 500);
             
+			$("#mapit").click(function() {
+				$(this).attr("disabled", "disabled");
+				$(".mapit").mapster({
+					"fillColor": "ff0000",
+					"fillOpacity": 0.5
+				});			
+			});
         });
-
     </script>
     </body>
 </html>
