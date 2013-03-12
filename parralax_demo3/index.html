@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Demo met knoppen</title>
+        <link rel="stylesheet" type="text/css" href="sequencejs-theme.sliding-horizontal-parallax.css" />
+        <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+    <body>
+        
+    <div id="container">
+        <div id="viewport">
+			<img src="img/zon.png" id="zon" />
+            <div class="parallax-layer" id="layer-1">
+				<img src="img/wolken.png" style="" />
+            </div>
+            <div class="parallax-layer">
+				<img src="img/vogels.png" style="" />
+            </div>
+            <div id="layer-content">
+                <div id="sequence-theme">
+                    <div id="sequence">
+                            <img class="prev" src="img/bt-prev.png" alt="Previous" />
+                            <img class="next" src="img/bt-next.png" alt="Next" />
+                            <ul>
+                                    <li class="animate-in">
+                                            <div class="info">
+                                                    <h2>Built using Sequence.js</h2>
+                                                    <p>The Responsive Slider with Advanced CSS3 Transitions</p>
+                                            </div>
+                                            <img src="img/varkensstal2.png" class="mapit" usemap="#varkensstal" />
+
+                                    </li>
+                                    <li>
+                                            <div class="info">
+                                                    <h2>Creative Control</h2>
+                                                    <p>Create unique sliders using CSS3 transitions -- no jQuery knowledge required!</p>
+                                            </div>
+                                        <img src="img/gaarde.png" class="mapit" usemap="#Gaarde" />
+                                    </li>
+                                    <li>
+                                            <div class="info">
+                                                    <h2>Cutting Edge</h2>
+                                                    <p>Supports modern browsers, old browsers (IE7+), touch devices and responsive designs</p>
+                                            </div>
+                                        <img src="img/debuytenhof.png" class="mapit" usemap="#debuytenhof" />
+                                    </li>
+                                    <li>
+                                        <img src="img/moesenpluk.png" class="mapit" />
+                                    </li>
+                            </ul>
+                    </div>
+                </div>              
+            </div>
+        </div>
+    </div>        
+	<div id="log"><button id="mapit">Map it!</button></div>
+
+	<map name="varkensstal">
+	  <area shape="poly" id="modal-varkensstal" coords="186,2048,984,1778,980,1502,874,1506,882,1290,920,1294,664,954,6,1058,4,1962" href="#" title="Varkensstal" alt="Varkensstal">
+	</map>
+	<map name="Gaarde">
+		<area shape="poly" coords="1340,2077,1393,2083,1705,1923,1933,1915,2133,1951,2149,1931,2153,1607,2301,1224,2311,1090,2203,1062,1974,1103,1925,1139,1885,1119,1917,955,1873,891,1741,871,1661,923,1561,915,1489,927,1475,1009,1541,1203,1609,1343,1617,1403,1584,1405,1521,1356,1519,1269,1445,1230,1381,1240,1295,1279,1232,1259,1172,1268,1164,1371,1246,1538,1281,1662,1298,1753,1335,1767" alt="Gaarde" href="#">
+		<area shape="poly" coords="1718,1962,1952,1966,1958,2078,1716,2068" title="Gaarde" alt="Gaarde bordje" href="#" />
+	</map>
+	<map name="debuytenhof">
+		<area shape="poly" coords="412,1282,1158,912,1886,1252,1858,1300,1866,1906,496,1936,488,1286" title="De Buytenhof" alt="De Buytenhof" href="#" />
+	</map>
+    
+    
+    <div class="hide">
+        <div id="basic-modal-content">
+            <img src="img/modal_voorbeeld1.png" />
+        </div>
+				<div id="layer-varkensstal" class="content-wrapper">
+				</div>
+				<div id="layer-gaarde" class="content-wrapper" >
+				</div>
+				<div id="layer-buytenhof" class="content-wrapper">
+				</div>
+				<div id="layer-moesenpluk" class="content-wrapper">
+				</div>	                
+    </div>
+    
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
+    
+    <script src="js/jquery.parallax.min.js"></script>
+    <script src="js/sequence.jquery-min.js"></script>
+    <script src="js/jquery.parallax.min.js"></script>
+    <script src="js/jquery.imagemapster.min.js"></script>   
+    <script src="js/sequencejs-options.sliding-horizontal-parallax.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+		
+//			$(window).scroll(function()
+//			{
+//				var position = $(this).scrollLeft();
+//				console.log(position);
+//				$("div#log1").html(position);
+//			});		
+		
+            // Declare parallax on layers
+
+            var windowHeight    = $(window).height();
+            var windowWidth     = $(window).width();
+            var $firstLayer     = $("#layer-1");
+            //console.log(-(windowWidth / 2) );
+            
+            $("#viewport img").height(windowHeight);
+            $("#viewport").height(windowHeight);
+            // The parralax
+//            jQuery('.parallax-layer').parallax(
+//				{
+//					"xorigin": "center",
+//					"yparallax": false,
+//					"mouseport": jQuery("#viewport")
+//				},
+//				{
+//					"xorigin": "left",
+//				},
+//				{
+//					"xorigin": "center",
+//				}
+//			); 
+//            setTimeout(function(){
+//                //console.log($firstLayer);
+//                $firstLayer.css("margin-left", "-683px").css("left", "30%");     
+//            }, 500);
+            
+			$("#mapit").click(function() {
+				$(this).attr("disabled", "disabled");
+				$(".mapit").mapster({
+					"fillColor": "ff0000",
+					"fillOpacity": 0.5
+				});			
+			});
+            
+            $("#modal-varkensstal").click(function (e) {
+                e.preventDefault();
+                $('#basic-modal-content').modal();
+            });
+        });
+    </script>
+    </body>
+</html>

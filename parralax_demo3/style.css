@@ -1,0 +1,67 @@
+body { padding: 0; margin: 0; }
+#viewport {
+    width: 100%;
+    overflow: auto;
+    position: relative;
+}
+.parallax-layer
+      { position:absolute; }
+	  
+#zon {
+	position: absolute;
+	right: 3px;
+	top: 0;
+	z-index: 25;
+}
+
+#layer-content {
+	position: relative;
+	width: 3000px;
+}
+/*	.content-wrapper {
+		position: absolute;
+		top: 0;
+	}*/
+/*	#layer-varkensstal {	left: 0; }
+	#layer-gaarde { left: 6%; }
+	#layer-buytenhof { left: 41%; }
+	#layer-moesenpluk { right: 0; }*/
+
+/* debug */
+#log { 
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 50px;
+	width: 150px;
+	background: grey;
+}
+
+/*
+ * SimpleModal Basic Modal Dialog
+ * http://simplemodal.com
+ *
+ * Copyright (c) 2013 Eric Martin - http://ericmmartin.com
+ *
+ * Licensed under the MIT license:
+ *   http://www.opensource.org/licenses/mit-license.php
+ */
+#basic-modal-content { width: 1448px; height: 600px; }
+/* Overlay */
+#simplemodal-overlay {background-color:#000;}
+
+/* Container */
+#simplemodal-container { color:#bbb; padding:12px;}
+#simplemodal-container .simplemodal-data {padding:8px;}
+#simplemodal-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
+#simplemodal-container a {color:#ddd;}
+#simplemodal-container a.modalCloseImg {
+    background:url("img/x.png") no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute; cursor:pointer;
+    right: 340px;
+    top: 32px;
+}
+#simplemodal-container h3 {color:#84b8d9;}
+
+
+
+.hide { display: none; }
