@@ -1,12 +1,12 @@
 body { padding: 0; margin: 0; }
 #viewport {
     width: 100%;
-    overflow: auto;
+    overflow: hidden;
     position: relative;
 }
 .parallax-layer
       { position:absolute; }
-	  
+.position-top { top: 0; }
 #zon {
 	position: absolute;
 	right: 3px;
@@ -15,8 +15,8 @@ body { padding: 0; margin: 0; }
 }
 
 #layer-content {
-	position: relative;
-	width: 3000px;
+    bottom: 0;
+    position: absolute;
 }
 /*	.content-wrapper {
 		position: absolute;
@@ -26,6 +26,15 @@ body { padding: 0; margin: 0; }
 	#layer-gaarde { left: 6%; }
 	#layer-buytenhof { left: 41%; }
 	#layer-moesenpluk { right: 0; }*/
+/* layers */
+
+.layer-wolken {
+    background: url("img/wolken.png") repeat-x;
+    height: 270px;
+    width: 100%;
+}
+
+
 
 /* debug */
 #log { 
@@ -35,6 +44,7 @@ body { padding: 0; margin: 0; }
 	height: 50px;
 	width: 150px;
 	background: grey;
+    z-index: 500;
 }
 
 /*
@@ -61,7 +71,6 @@ body { padding: 0; margin: 0; }
     top: 32px;
 }
 #simplemodal-container h3 {color:#84b8d9;}
-
 
 
 .hide { display: none; }

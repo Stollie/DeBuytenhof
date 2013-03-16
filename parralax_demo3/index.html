@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <title>Demo met knoppen</title>
-        <link rel="stylesheet" type="text/css" href="sequencejs-theme.sliding-horizontal-parallax.css" />
+        <link rel="stylesheet" type="text/css" href="movingboxes.css" />
         <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
     <body>
@@ -11,46 +11,33 @@
     <div id="container">
         <div id="viewport">
 			<img src="img/zon.png" id="zon" />
-            <div class="parallax-layer" id="layer-1">
-				<img src="img/wolken.png" style="" />
+            <div class="parallax-layer position-top layer-wolken">
+				
             </div>
-            <div class="parallax-layer">
-				<img src="img/vogels.png" style="" />
+            <div class="parallax-layer position-top">
+				<img src="img/vogels.png" />
             </div>
             <div id="layer-content">
-                <div id="sequence-theme">
-                    <div id="sequence">
-                            <img class="prev" src="img/bt-prev.png" alt="Previous" />
-                            <img class="next" src="img/bt-next.png" alt="Next" />
-                            <ul>
-                                    <li class="animate-in">
-                                            <div class="info">
-                                                    <h2>Built using Sequence.js</h2>
-                                                    <p>The Responsive Slider with Advanced CSS3 Transitions</p>
-                                            </div>
-                                            <img src="img/varkensstal2.png" class="mapit" usemap="#varkensstal" />
+                
+                <div id="boxes">
 
-                                    </li>
-                                    <li>
-                                            <div class="info">
-                                                    <h2>Creative Control</h2>
-                                                    <p>Create unique sliders using CSS3 transitions -- no jQuery knowledge required!</p>
-                                            </div>
-                                        <img src="img/gaarde.png" class="mapit" usemap="#Gaarde" />
-                                    </li>
-                                    <li>
-                                            <div class="info">
-                                                    <h2>Cutting Edge</h2>
-                                                    <p>Supports modern browsers, old browsers (IE7+), touch devices and responsive designs</p>
-                                            </div>
-                                        <img src="img/debuytenhof.png" class="mapit" usemap="#debuytenhof" />
-                                    </li>
-                                    <li>
-                                        <img src="img/moesenpluk.png" class="mapit" />
-                                    </li>
-                            </ul>
-                    </div>
-                </div>              
+                 <div> <!-- panel #1 -->
+                  <img src="img/varkensstal2.png" class="mapit" usemap="#varkensstal" />
+                 </div>
+
+                 <div> <!-- panel #2 -->
+                  <img src="img/gaarde.png" class="mapit" usemap="#Gaarde" />
+                 </div>
+                    
+                 <div> <!-- panel #3 -->
+                  <img src="img/debuytenhof.png" class="mapit" usemap="#debuytenhof" />
+                 </div>
+                    
+                 <div> <!-- panel #4 -->
+                  <img src="img/moesenpluk.png" class="" />
+                 </div>                    
+                </div>
+                            
             </div>
         </div>
     </div>        
@@ -86,9 +73,9 @@
     
     <script src="js/jquery.parallax.min.js"></script>
     <script src="js/sequence.jquery-min.js"></script>
-    <script src="js/jquery.parallax.min.js"></script>
-    <script src="js/jquery.imagemapster.min.js"></script>   
-    <script src="js/sequencejs-options.sliding-horizontal-parallax.js"></script>
+    <!--<script src="js/jquery.imagemapster.min.js"></script>-->   
+    <script src="js/jquery.easing.1.2.js"></script>   
+    <script src="js/jquery.movingboxes.min.js"></script>
     <script type="text/javascript">
 
         $(document).ready(function() {
@@ -104,10 +91,11 @@
 
             var windowHeight    = $(window).height();
             var windowWidth     = $(window).width();
-            var $firstLayer     = $("#layer-1");
+            //var $firstLayer     = $("#layer-1");
             //console.log(-(windowWidth / 2) );
             
-            $("#viewport img").height(windowHeight);
+            //$("#viewport img").height(windowHeight);
+            $("#layer-content").width(windowWidth);
             $("#viewport").height(windowHeight);
             // The parralax
 //            jQuery('.parallax-layer').parallax(
@@ -117,10 +105,7 @@
 //					"mouseport": jQuery("#viewport")
 //				},
 //				{
-//					"xorigin": "left",
-//				},
-//				{
-//					"xorigin": "center",
+//					"xorigin": "left"
 //				}
 //			); 
 //            setTimeout(function(){
@@ -128,18 +113,102 @@
 //                $firstLayer.css("margin-left", "-683px").css("left", "30%");     
 //            }, 500);
             
-			$("#mapit").click(function() {
-				$(this).attr("disabled", "disabled");
-				$(".mapit").mapster({
-					"fillColor": "ff0000",
-					"fillOpacity": 0.5
-				});			
-			});
+//			$("#mapit").click(function() {
+//				$(this).attr("disabled", "disabled");
+//				$(".mapit").mapster({
+//					"fillColor": "ff0000",
+//					"fillOpacity": 0.5
+//				});
+//			});
+
+$(window).resize(function(){
+    clearTimeout(timer);
+    var slider = $('#boxes').data('movingBoxes');
+    slider.options.width = $(window).width() * 0.5; // make 50% browser width
+    slider.options.panelWidth = 0.7; // make 70% of wrapper width
+    // prevent updating continuously, aka throttle resize
+    timer = setTimeout(function(){
+        slider.update(false);
+    }, 100);
+});        
+        
+//            $("#modal-varkensstal").click(function (e) {
+//                e.preventDefault();
+//                $('#basic-modal-content').modal();
+//            });
             
-            $("#modal-varkensstal").click(function (e) {
-                e.preventDefault();
-                $('#basic-modal-content').modal();
-            });
+            
+$('#boxes').movingBoxes({
+
+    // overall width of movingBoxes
+    // width: 300, // Deprecated, but still works in v2.2.2
+    // current panel width adjusted to 50% of overall width
+    // panelWidth: 0.5, // Deprecated, but still works in v2.2.2    
+    
+    // **** Appearance ****
+    // start with this panel
+    startPanel: 1,
+    // non-current panel size: 80% of panel size
+    reducedSize: 1,
+    // if true, slider height set to max panel height; if false, height will auto adjust.
+    fixedHeight: true,
+    
+    // **** Behaviour ****
+    // animation time in milliseconds
+    speed: 500,
+    // if true, hash tags are enabled
+    hashTags: true,
+    // if true, the panel will "wrap" (it really rewinds/fast forwards) at the ends
+    wrap: false,
+    // if true, navigation links will be added
+    buildNav: true,
+    // function which returns the navigation text for each panel
+    navFormatter: function(index, panel){ return "&#9679;" },
+    // anything other than "linear" or "swing" requires the easing plugin
+    easing: 'swing',
+    
+    // **** Selectors & classes ****
+    // current panel class
+    currentPanel: 'current',
+    // added to the navigation, but the title attribute is blank unless the link text-indent is negative
+    tooltipClass: 'tooltip',
+    preinit: function(e, mb, tar) {
+        var throttled = false,
+        
+        // increase the throttleDelay to slow down the mouse scrolling
+        throttledDelay = 100; // milliseconds
+        
+        mb.$window.mousewheel(function(event, delta) {
+            if (!throttled) {
+                mb.change(mb.curPanel + (delta < 0 ? 1 : -1));
+                throttled = true;
+                setTimeout(function(){
+                    throttled = false;
+                }, throttledDelay);
+            }
+            return false; // prevent default
+        });
+    },
+    // **** Callbacks ****
+    // e = event, slider = MovingBoxes Object, tar = current panel #
+    // callback when MovingBoxes has completed initialization
+    initialized: function(e, slider, tar){},
+    // callback upon change panel initialization
+    initChange: function(e, slider, tar){
+        // alert( 'Changing panels to #' + tar );
+    },
+    // callback before any animation occurs
+    beforeAnimation: function(e, slider, tar){},
+    // callback after animation completes
+    completed: function(e, slider, tar){
+        // get name from title
+        // var name = slider.$panels.eq(tar-1).find('h2').text().split(' ')[0]; 
+        // alert( "Now on " + name + "'s panel" );
+    }
+
+});
+            
+            
         });
     </script>
     </body>
