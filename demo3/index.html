@@ -72,7 +72,6 @@
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
     
     <script src="js/jquery.parallax.min.js"></script>
-    <script src="js/sequence.jquery-min.js"></script>
     <!--<script src="js/jquery.imagemapster.min.js"></script>-->   
     <script src="js/jquery.easing.1.2.js"></script>   
     <script src="js/jquery.movingboxes.min.js"></script>
@@ -98,16 +97,13 @@
             $("#layer-content").width(windowWidth);
             $("#viewport").height(windowHeight);
             // The parralax
-//            jQuery('.parallax-layer').parallax(
-//				{
-//					"xorigin": "center",
-//					"yparallax": false,
-//					"mouseport": jQuery("#viewport")
-//				},
-//				{
-//					"xorigin": "left"
-//				}
-//			); 
+            jQuery('.parallax-layer').parallax(
+				{
+					"xorigin": "center",
+					"yparallax": false,
+					"mouseport": jQuery("#viewport")
+				}
+			); 
 //            setTimeout(function(){
 //                //console.log($firstLayer);
 //                $firstLayer.css("margin-left", "-683px").css("left", "30%");     
@@ -120,24 +116,29 @@
 //					"fillOpacity": 0.5
 //				});
 //			});
+//			
+//            $("#modal-varkensstal").click(function (e) {
+//                e.preventDefault();
+//                $('#basic-modal-content').modal();
+//            });
 
+        
 $(window).resize(function(){
-    clearTimeout(timer);
+            var windowHeight    = $(window).height();
+            var windowWidth     = $(window).width();
+    $("#layer-content").width(windowWidth);
+    $("#viewport").height(windowHeight);    
+        
+    //clearTimeout(timer);
     var slider = $('#boxes').data('movingBoxes');
-    slider.options.width = $(window).width() * 0.5; // make 50% browser width
-    slider.options.panelWidth = 0.7; // make 70% of wrapper width
+    slider.options.width = windowWidth; // make 50% browser width
+    slider.options.panelWidth = 1; // make 70% of wrapper width
     // prevent updating continuously, aka throttle resize
     timer = setTimeout(function(){
         slider.update(false);
     }, 100);
 });        
-        
-//            $("#modal-varkensstal").click(function (e) {
-//                e.preventDefault();
-//                $('#basic-modal-content').modal();
-//            });
-            
-            
+   
 $('#boxes').movingBoxes({
 
     // overall width of movingBoxes
@@ -147,7 +148,7 @@ $('#boxes').movingBoxes({
     
     // **** Appearance ****
     // start with this panel
-    startPanel: 1,
+    startPanel: 2,
     // non-current panel size: 80% of panel size
     reducedSize: 1,
     // if true, slider height set to max panel height; if false, height will auto adjust.
@@ -162,8 +163,13 @@ $('#boxes').movingBoxes({
     wrap: false,
     // if true, navigation links will be added
     buildNav: true,
+    stopAnimation: true,
     // function which returns the navigation text for each panel
-    navFormatter: function(index, panel){ return "&#9679;" },
+//    navFormatter: function(index, panel){ return "&#9679;" },
+    navFormatter : function(index, panel){
+        // function which gets nav text from inside the panel header span
+        return ['Varkens', 'Gaarde', 'Winkel', 'Pluktuin'][index-1];
+    },
     // anything other than "linear" or "swing" requires the easing plugin
     easing: 'swing',
     
@@ -173,21 +179,10 @@ $('#boxes').movingBoxes({
     // added to the navigation, but the title attribute is blank unless the link text-indent is negative
     tooltipClass: 'tooltip',
     preinit: function(e, mb, tar) {
-        var throttled = false,
-        
-        // increase the throttleDelay to slow down the mouse scrolling
-        throttledDelay = 100; // milliseconds
-        
-        mb.$window.mousewheel(function(event, delta) {
-            if (!throttled) {
-                mb.change(mb.curPanel + (delta < 0 ? 1 : -1));
-                throttled = true;
-                setTimeout(function(){
-                    throttled = false;
-                }, throttledDelay);
-            }
-            return false; // prevent default
-        });
+//        mb.$window.mousewheel(function(event, delta) {
+//            mb.change(mb.curPanel + (delta < 0 ? 1 : -1));
+//            return false; // prevent default
+//        });
     },
     // **** Callbacks ****
     // e = event, slider = MovingBoxes Object, tar = current panel #

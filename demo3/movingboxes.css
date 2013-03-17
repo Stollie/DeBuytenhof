@@ -63,7 +63,7 @@ a.mb-scrollButtons {
 	display: block;
 	width: 45px;
 	height: 58px;
-	background: transparent url(../images/arrows.png) no-repeat;
+	/*background: transparent url(../images/arrows.png) no-repeat;*/
 	position: absolute;
 	top: 50%;
 	margin-top: -29px; /* if you change the arrow images, you may have to adjust this (1/2 height of arrow image) */
@@ -73,18 +73,19 @@ a.mb-scrollButtons {
 	border: 0;
 }
 a.mb-scrollButtons.mb-left {
-	background-position: left top;
-	left: -45px;
+    background: red url("img/bt-prev.png") no-repeat;
+	left: 45px;
 }
 a.mb-scrollButtons.mb-right {
+    background: red url("img/bt-next.png") no-repeat;
 	background-position: right top;
-	right: -45px;
+	right: 45px;
 }
 a.mb-scrollButtons.mb-left:hover {
-	background-position: left bottom;
+	/*background-position: left bottom;*/
 }
 a.mb-scrollButtons.mb-right:hover {
-	background-position: right bottom;
+	/*background-position: right bottom;*/
 }
 a.mb-scrollButtons.disabled {
 	display: none;
