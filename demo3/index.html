@@ -11,8 +11,11 @@
     <div id="container">
         <div id="viewport">
 			<img src="img/zon.png" id="zon" />
-            <div class="parallax-layer position-top layer-wolken">
+<!--            <div class="parallax-layer position-top layer-wolken">
 				
+            </div>-->
+            <div class="parallax-layer" id="layer-1">
+				<img src="img/wolken.png" style="" />
             </div>
             <div class="parallax-layer position-top">
 				<img src="img/vogels.png" />
@@ -41,7 +44,7 @@
             </div>
         </div>
     </div>        
-	<div id="log"><button id="mapit">Map it!</button></div>
+<!--	<div id="log"><button id="mapit">Map it!</button></div>-->
 
 	<map name="varkensstal">
 	  <area shape="poly" id="modal-varkensstal" coords="186,2048,984,1778,980,1502,874,1506,882,1290,920,1294,664,954,6,1058,4,1962" href="#" title="Varkensstal" alt="Varkensstal">
@@ -59,17 +62,17 @@
         <div id="basic-modal-content">
             <img src="img/modal_voorbeeld1.png" />
         </div>
-				<div id="layer-varkensstal" class="content-wrapper">
+<!--				<div id="layer-varkensstal" class="content-wrapper">
 				</div>
 				<div id="layer-gaarde" class="content-wrapper" >
 				</div>
 				<div id="layer-buytenhof" class="content-wrapper">
 				</div>
 				<div id="layer-moesenpluk" class="content-wrapper">
-				</div>	                
+				</div>	                -->
     </div>
-    
-    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+    <!--<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>-->
     
     <script src="js/jquery.parallax.min.js"></script>
     <!--<script src="js/jquery.imagemapster.min.js"></script>-->   
@@ -97,7 +100,7 @@
             $("#layer-content").width(windowWidth);
             $("#viewport").height(windowHeight);
             // The parralax
-            jQuery('.parallax-layer').parallax(
+            $('.parallax-layer').parallax(
 				{
 					"xorigin": "center",
 					"yparallax": false,
