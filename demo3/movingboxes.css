@@ -72,7 +72,7 @@ a.mb-scrollButtons {
 	outline: 0;
 	border: 0;
 }
-a.mb-scrollButtons.mb-left {
+/*a.mb-scrollButtons.mb-left {
     background: red url("img/bt-prev.png") no-repeat;
 	left: 45px;
 }
@@ -82,15 +82,15 @@ a.mb-scrollButtons.mb-right {
 	right: 45px;
 }
 a.mb-scrollButtons.mb-left:hover {
-	/*background-position: left bottom;*/
+	background-position: left bottom;
 }
 a.mb-scrollButtons.mb-right:hover {
-	/*background-position: right bottom;*/
+	background-position: right bottom;
 }
 a.mb-scrollButtons.disabled {
 	display: none;
 }
-
+*/
 /*** Controls added below the panels ***/
 .mb-controls {
 	margin: 0 auto;

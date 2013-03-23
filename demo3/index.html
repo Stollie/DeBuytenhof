@@ -25,189 +25,60 @@
                 <div id="boxes">
 
                  <div> <!-- panel #1 -->
-                  <img src="img/varkensstal2.png" class="mapit" usemap="#varkensstal" />
+                    <img src="img/alles_r1_c1.png" class="mapit" usemap="#varkensstal" />
                  </div>
 
                  <div> <!-- panel #2 -->
-                  <img src="img/gaarde.png" class="mapit" usemap="#Gaarde" />
+                    <img src="img/alles_r1_c2.png" class="mapit" usemap="#gaarde"  />
                  </div>
                     
                  <div> <!-- panel #3 -->
-                  <img src="img/debuytenhof.png" class="mapit" usemap="#debuytenhof" />
+                    <img src="img/alles_r1_c3.png" class="mapit" usemap="#winkel" />
                  </div>
                     
                  <div> <!-- panel #4 -->
-                    <img src="img/moesenpluk.png" class="" />
-                 </div>                    
+                    <img src="img/alles_r1_c4.png" />
+                 </div>
+                    
+                 <div> <!-- panel #5 -->
+                    <img src="img/alles_r1_c5.png" />
+                 </div>  
                 </div>
             </div>
         </div>
-    </div>        
-	<div id="log"><button id="mapit">Map it!</button></div>
+    </div>    
 
-	<map name="varkensstal">
-	  <area shape="poly" id="modal-varkensstal" coords="186,2048,984,1778,980,1502,874,1506,882,1290,920,1294,664,954,6,1058,4,1962" href="#" title="Varkensstal" alt="Varkensstal">
-	</map>
-	<map name="Gaarde">
-		<area shape="poly" coords="1340,2077,1393,2083,1705,1923,1933,1915,2133,1951,2149,1931,2153,1607,2301,1224,2311,1090,2203,1062,1974,1103,1925,1139,1885,1119,1917,955,1873,891,1741,871,1661,923,1561,915,1489,927,1475,1009,1541,1203,1609,1343,1617,1403,1584,1405,1521,1356,1519,1269,1445,1230,1381,1240,1295,1279,1232,1259,1172,1268,1164,1371,1246,1538,1281,1662,1298,1753,1335,1767" alt="Gaarde" href="#">
-		<area shape="poly" coords="1718,1962,1952,1966,1958,2078,1716,2068" title="Gaarde" alt="Gaarde bordje" href="#" />
-	</map>
-	<map name="debuytenhof">
-		<area shape="poly" coords="412,1282,1158,912,1886,1252,1858,1300,1866,1906,496,1936,488,1286" title="De Buytenhof" alt="De Buytenhof" href="#" />
-	</map>
-    
-    
+    <map name="varkensstal">
+      <area shape="poly" data-name="varkensstal" coords="1,83,239,45,245,61,266,90,301,131,332,171,320,168,320,205,321,227,317,251,339,247,358,249,358,345,309,366,254,384,215,393,166,410,93,435,86,441,56,436,54,427,2,414" href="#" />
+    </map>
+    <map name="gaarde">
+      <area shape="poly" data-name="gaarde" coords="130,461,128,342,117,339,110,317,107,294,92,260,75,223,65,193,66,172,74,161,88,164,101,169,116,165,135,156,174,157,187,169,195,187,200,194,213,206,231,214,229,193,217,168,206,140,182,89,176,62,186,35,208,31,230,41,240,39,263,27,309,28,332,50,335,76,326,104,347,122,360,98,385,105,417,96,463,95,481,113,483,131,467,180,437,271,421,280,419,400,418,410,359,395,286,395,237,407,197,423" href="#" />
+    </map>
+    <map name="winkel">
+      <area shape="poly" data-name="winkel" coords="90,155,346,34,607,157,597,172,594,395,349,396,102,398,100,187" href="#" />
+    </map>
+
     <div class="hide">
+        <audio preload="auto" id="winkel-geluid" autobuffer>
+            <source src="audio/4-De-Smaak-van-Buyten.mp3" type="audio/mp3" />
+            <source src="audio/4-De-Smaak-van-Buyten.ogg" type="audio/ogg" />
+        </audio>
+        <audio preload="auto" id="varkensstal-geluid" autobuffer>
+            <source src="audio/12-Varkens.mp3" type="audio/mp3" />
+            <source src="audio/12-Varkens.ogg" type="audio/ogg" />
+        </audio>
         <div id="basic-modal-content">
             <img src="img/modal_voorbeeld1.png" />
         </div>
-<!--				<div id="layer-varkensstal" class="content-wrapper">
-				</div>
-				<div id="layer-gaarde" class="content-wrapper" >
-				</div>
-				<div id="layer-buytenhof" class="content-wrapper">
-				</div>
-				<div id="layer-moesenpluk" class="content-wrapper">
-				</div>	                -->
+
     </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
     <!--<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>-->
     
     <script src="js/jquery.parallax.min.js"></script>
-    <script src="js/jquery.imagemapster.min.js"></script>   
-    <script src="js/jquery.easing.1.2.js"></script>   
+    <script src="js/jquery.imagemapster.min.js"></script>
     <script src="js/jquery.movingboxes.min.js"></script>
-    <script type="text/javascript">
-
-        $(document).ready(function() {
-		
-//			$(window).scroll(function()
-//			{
-//				var position = $(this).scrollLeft();
-//				console.log(position);
-//				$("div#log1").html(position);
-//			});		
-		
-            // Declare parallax on layers
-
-            var windowHeight    = $(window).height();
-            var windowWidth     = $(window).width();
-            //var $firstLayer     = $("#layer-1");
-            //console.log(-(windowWidth / 2) );
-            
-            $("#layer-content img").height(400);
-            $("#layer-content").width(windowWidth);
-            $("#viewport").height(windowHeight);
-            // The parralax
-            $('.parallax-layer').parallax(
-                            {
-                                "xorigin": "center",
-                                "yparallax": false,
-                                "mouseport": jQuery("#viewport")
-                            }
-			); 
-//            setTimeout(function(){
-//                //console.log($firstLayer);
-//                $firstLayer.css("margin-left", "-683px").css("left", "30%");     
-//            }, 500);
-            
-            $("#mapit").click(function() {
-                $(this).attr("disabled", "disabled");
-                $(".mapit").mapster({
-                    "fillColor": "ff0000",
-                    "fillOpacity": 0.5
-                });
-            });
-//			
-            $("#modal-varkensstal").click(function (e) {
-                e.preventDefault();
-                $('#basic-modal-content').modal();
-            });
-
-        
-            $(window).resize(function(){
-                var windowHeight    = $(window).height();
-                var windowWidth     = $(window).width();
-
-            //    $("#viewport").height(windowHeight);    
-
-                //clearTimeout(timer);
-                var slider = $('#boxes').data('movingBoxes');
-                slider.options.width = windowWidth; // make 50% browser width
-                slider.options.panelWidth = 1; // make 70% of wrapper width
-                // prevent updating continuously, aka throttle resize
-                timer = setTimeout(function(){
-                    slider.update(false);
-                    $("#layer-content").width(windowWidth);
-                }, 100);
-            });
-   
-            $('#boxes').movingBoxes({
-
-                // overall width of movingBoxes
-                // width: 300, // Deprecated, but still works in v2.2.2
-                // current panel width adjusted to 50% of overall width
-                // panelWidth: 0.5, // Deprecated, but still works in v2.2.2    
-
-                // **** Appearance ****
-                // start with this panel
-                startPanel: 2,
-                // non-current panel size: 80% of panel size
-                reducedSize: 1,
-                // if true, slider height set to max panel height; if false, height will auto adjust.
-                fixedHeight: true,
-
-                // **** Behaviour ****
-                // animation time in milliseconds
-                speed: 1000,
-                // if true, hash tags are enabled
-                hashTags: true,
-                // if true, the panel will "wrap" (it really rewinds/fast forwards) at the ends
-                wrap: false,
-                // if true, navigation links will be added
-                buildNav: true,
-                stopAnimation: true,
-                // function which returns the navigation text for each panel
-            //    navFormatter: function(index, panel){ return "&#9679;" },
-                navFormatter : function(index, panel){
-                    // function which gets nav text from inside the panel header span
-                    return ['Varkens', 'Gaarde', 'Winkel', 'Pluktuin'][index-1];
-                },
-                // anything other than "linear" or "swing" requires the easing plugin
-                easing: 'swing',
-
-                // **** Selectors & classes ****
-                // current panel class
-                currentPanel: 'current',
-                // added to the navigation, but the title attribute is blank unless the link text-indent is negative
-                tooltipClass: 'tooltip',
-                preinit: function(e, mb, tar) {
-            //        mb.$window.mousewheel(function(event, delta) {
-            //            mb.change(mb.curPanel + (delta < 0 ? 1 : -1));
-            //            return false; // prevent default
-            //        });
-                },
-                // **** Callbacks ****
-                // e = event, slider = MovingBoxes Object, tar = current panel #
-                // callback when MovingBoxes has completed initialization
-                initialized: function(e, slider, tar){},
-                // callback upon change panel initialization
-                initChange: function(e, slider, tar){
-                    // alert( 'Changing panels to #' + tar );
-                },
-                // callback before any animation occurs
-                beforeAnimation: function(e, slider, tar){},
-                // callback after animation completes
-                completed: function(e, slider, tar){
-                    // get name from title
-                    // var name = slider.$panels.eq(tar-1).find('h2').text().split(' ')[0]; 
-                    // alert( "Now on " + name + "'s panel" );
-                }
-
-            });
-            
-            
-        });
-    </script>
+    <script src="js/jquery.simplemodal.1.4.4.min.js"></script>
+    <script src="js/site.js"></script>
     </body>
 </html>
