@@ -58,7 +58,7 @@ img { border: 0; }
  * Licensed under the MIT license:
  *   http://www.opensource.org/licenses/mit-license.php
  */
-#basic-modal-content { width: 1448px; height: 600px; }
+#basic-modal-content { width: 600px; background: white; height: 600px; }
 /* Overlay */
 #simplemodal-overlay {background-color:#000;}
 
@@ -69,8 +69,8 @@ img { border: 0; }
 #simplemodal-container a {color:#ddd;}
 #simplemodal-container a.modalCloseImg {
     background:url("img/x.png") no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute; cursor:pointer;
-    right: 340px;
-    top: 32px;
+    right: 20px;
+    top: 20px;
 }
 #simplemodal-container h3 {color:#84b8d9;}
 

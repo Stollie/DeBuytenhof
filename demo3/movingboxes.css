@@ -61,9 +61,9 @@ change .current class name using plugin option, currentPanel : 'current' */
 /*** Left & Right Navigation Arrows ***/
 a.mb-scrollButtons {
 	display: block;
-	width: 45px;
-	height: 58px;
-	/*background: transparent url(../images/arrows.png) no-repeat;*/
+	width: 30px;
+	height: 27px;
+	background: transparent url(img/bg_direction_nav.png) no-repeat;
 	position: absolute;
 	top: 50%;
 	margin-top: -29px; /* if you change the arrow images, you may have to adjust this (1/2 height of arrow image) */
@@ -71,13 +71,12 @@ a.mb-scrollButtons {
 	text-decoration: none;
 	outline: 0;
 	border: 0;
+    z-index: 9999;
 }
-/*a.mb-scrollButtons.mb-left {
-    background: red url("img/bt-prev.png") no-repeat;
+a.mb-scrollButtons.mb-left {
 	left: 45px;
 }
 a.mb-scrollButtons.mb-right {
-    background: red url("img/bt-next.png") no-repeat;
 	background-position: right top;
 	right: 45px;
 }
@@ -90,7 +89,7 @@ a.mb-scrollButtons.mb-right:hover {
 a.mb-scrollButtons.disabled {
 	display: none;
 }
-*/
+
 /*** Controls added below the panels ***/
 .mb-controls {
 	margin: 0 auto;

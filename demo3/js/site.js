@@ -46,7 +46,6 @@ $(document).ready(function() {
         reducedSize: 1,
         // if true, slider height set to max panel height; if false, height will auto adjust.
         fixedHeight: true,
-
         // **** Behaviour ****
         // animation time in milliseconds
         speed: 1000,
@@ -63,14 +62,6 @@ $(document).ready(function() {
             // function which gets nav text from inside the panel header span
             return ['Varkens', 'Gaarde', 'Winkel', 'Moestuin', 'Pluktuin'][index-1];
         },
-        // anything other than "linear" or "swing" requires the easing plugin
-        easing: 'swing',
-
-        // **** Selectors & classes ****
-        // current panel class
-        currentPanel: 'current',
-        // added to the navigation, but the title attribute is blank unless the link text-indent is negative
-        tooltipClass: 'tooltip',
         preinit: function(e, mb, tar) {
     //        mb.$window.mousewheel(function(event, delta) {
     //            mb.change(mb.curPanel + (delta < 0 ? 1 : -1));
@@ -112,7 +103,17 @@ $(document).ready(function() {
             "onClick": function (data) {
                 //document.getElementById(data.key).play();
                 if (data.key === 'varkensstal') {
-                    $('#basic-modal-content').modal();
+                    $('#basic-modal-content').modal({
+                        onShow: function (dialog) {
+                            // Access elements inside the dialog
+                            // Useful for binding events, initializing other plugins, etc.
+
+                            $("#basic-modal-content")
+                                .find("#slides")
+                                .movingBoxes({reducedSize: 1,fixedHeight: true});
+                        }
+                    });
+
                 }
             },
             "onMouseover": function(data){
