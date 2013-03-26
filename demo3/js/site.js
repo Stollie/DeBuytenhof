@@ -7,7 +7,7 @@ $(document).ready(function() {
     $("#layer-content").width(windowWidth);
     $("#viewport").height(windowHeight);
     // The parralax
-    $('.parallax-layer').parallax(
+    $(".parallax-layer").parallax(
                     {
                         "xorigin": "center",
                         "yparallax": false,
@@ -76,6 +76,9 @@ $(document).ready(function() {
         initialized: function(e, slider, tar){
             // image map laden
             $.iniMapster();
+
+            // Mute knop toevoegen in menu
+            $.addAudioControl();
         },
         // callback upon change panel initialization
         initChange: function(e, slider, tar){
@@ -96,7 +99,7 @@ $(document).ready(function() {
 
 ;(function($){
    $.iniMapster = function() {
-        console.log("mapster");
+        //console.log("mapster");
         $(".mapit").mapster({
              mapKey: 'data-name',
             "fillColor": "E9F4FB",
@@ -119,7 +122,36 @@ $(document).ready(function() {
                 }
             },
             "onMouseover": function(data){
-                document.getElementById(data.key+"-geluid").play();
+                if ($("#"+data.key+"-geluid").size() > 0) {
+                    document.getElementById(data.key+"-geluid").play();
+                }
+            }
+        });
+    };
+    
+    $.addAudioControl = function() {
+        $("#layer-content .mb-controls").append('<img id="mute-button" src="img/icons/sound.png" data-muted="true" width="16" height="16" />');
+        
+        var $mbcontrols = $("#layer-content .mb-controls");
+        var $mute_button = $("#mute-button");
+        $mbcontrols.on("click", $mute_button, function(e){
+            
+            var elements = document.getElementsByTagName("audio");
+            
+            if ($mute_button.data("muted") === false) {
+
+                for (var i = 0; i < elements.length; i++) {
+                  elements[i].muted = true;
+                }
+
+                $mute_button.attr('src', 'img/icons/sound_mute.png').data("muted", true);
+            }
+            else {
+                $mute_button.attr('src', 'img/icons/sound.png').data("muted", false);
+
+                for (var i = 0; i < elements.length; i++) {
+                  elements[i].muted = false;
+                }
             }
         });
     };

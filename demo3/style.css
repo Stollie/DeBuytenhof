@@ -21,15 +21,6 @@ img { border: 0; }
     bottom: 0;
     position: absolute;
 }
-/*	.content-wrapper {
-		position: absolute;
-		top: 0;
-	}*/
-/*	#layer-varkensstal {	left: 0; }
-	#layer-gaarde { left: 6%; }
-	#layer-buytenhof { left: 41%; }
-	#layer-moesenpluk { right: 0; }*/
-/* layers */
 
 .layer-wolken {
     background: url("img/wolken.png") repeat-x;
@@ -37,6 +28,8 @@ img { border: 0; }
     width: 100%;
 }
 
+
+#mute-button { margin-left: 15px; cursor: pointer; }
 
 /*
  * SimpleModal Basic Modal Dialog
@@ -50,13 +43,13 @@ img { border: 0; }
 /* Om de achtergrond afbeelding in te zetten*/
 #basic-modal-wrapper {
     background: grey;
-    height: 600px;
+    height: 700px;
     width: 1000px;
 }
 
 #modal-content {
     background: white;
-    height: 600px; 
+    height: 700px; 
     margin: 0 auto;
     width: 700px;
 }
