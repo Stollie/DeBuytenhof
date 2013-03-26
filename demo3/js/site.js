@@ -40,6 +40,8 @@ $(document).ready(function() {
         // panelWidth: 0.5, // Deprecated, but still works in v2.2.2    
 
         // **** Appearance ****
+        // 
+        leftPadding: false,
         // start with this panel
         startPanel: 2,
         // non-current panel size: 80% of panel size
@@ -110,7 +112,7 @@ $(document).ready(function() {
 
                             $("#basic-modal-content")
                                 .find("#slides")
-                                .movingBoxes({reducedSize: 0.8,fixedHeight: true});
+                                .movingBoxes({reducedSize: 0.8,fixedHeight: true, leftPadding: true,});
                         }
                     });
 
