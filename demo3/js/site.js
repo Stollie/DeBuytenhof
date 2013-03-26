@@ -105,12 +105,12 @@ $(document).ready(function() {
             "onClick": function (data) {
                 //document.getElementById(data.key).play();
                 if (data.key === 'varkensstal') {
-                    $('#basic-modal-content').modal({
+                    $('#basic-modal-wrapper').modal({
                         onShow: function (dialog) {
                             // Access elements inside the dialog
                             // Useful for binding events, initializing other plugins, etc.
 
-                            $("#basic-modal-content")
+                            $("#basic-modal-wrapper")
                                 .find("#slides")
                                 .movingBoxes({reducedSize: 0.8,fixedHeight: true, leftPadding: true,});
                         }

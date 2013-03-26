@@ -57,39 +57,10 @@ change .current class name using plugin option, currentPanel : 'current' */
 #container .mb-inside * {
 	/*max-width: 100%;*/
 }
-
 /*** Left & Right Navigation Arrows ***/
-#container a.mb-scrollButtons {
-	display: block;
-	width: 30px;
-	height: 27px;
-	background: transparent url(img/bg_direction_nav.png) no-repeat;
-	position: absolute;
-	top: 50%;
-	margin-top: -29px; /* if you change the arrow images, you may have to adjust this (1/2 height of arrow image) */
-	cursor: pointer;
-	text-decoration: none;
-	outline: 0;
-	border: 0;
-    z-index: 9999;
-}
-#container a.mb-scrollButtons.mb-left {
-	left: 45px;
-}
-#container a.mb-scrollButtons.mb-right {
-	background-position: right top;
-	right: 45px;
-}
-#container a.mb-scrollButtons.mb-left:hover {
-	background-position: left bottom;
-}
-#container a.mb-scrollButtons.mb-right:hover {
-	background-position: right bottom;
-}
-#container a.mb-scrollButtons.disabled {
+#simplemodal-container .mb-scrollButtons {
 	display: none;
 }
-
 /*** Controls added below the panels ***/
 #container .mb-controls {
 	margin: 0 auto;
@@ -121,13 +92,13 @@ change .current class name using plugin option, currentPanel : 'current' */
 /* In de simple modal */
 /*** Overall MovingBoxes Slider ***/
 #simplemodal-container .mb-wrapper {
-	border: 5px solid #ccc;
+	border: 2px solid #ccc;
 	margin: 0 auto 20px;
 	position: relative;
 	left: 0;
 	top: 0;
 	border-radius: 10px;
-	box-shadow: inset 0 0 10px #888;
+	/*box-shadow: inset 0 0 10px #888;*/
 }
 
 /* Panel Wrapper */
@@ -153,7 +124,7 @@ change .current class name using plugin option, currentPanel : 'current' */
 /*** Slider panel ***/
 #simplemodal-container .mb-slider .mb-panel {
 	margin: 0;
-	padding: 20px;
+	padding: 5px;
 	display: block;
 	cursor: pointer;
 	float: left;
@@ -178,25 +149,25 @@ change .current class name using plugin option, currentPanel : 'current' */
 
 /*** Left & Right Navigation Arrows ***/
 #simplemodal-container a.mb-scrollButtons {
-	display: block;
-	width: 45px;
-	height: 58px;
-	background: transparent url(../images/arrows.png) no-repeat;
-	position: absolute;
-	top: 50%;
-	margin-top: -29px; /* if you change the arrow images, you may have to adjust this (1/2 height of arrow image) */
-	cursor: pointer;
-	text-decoration: none;
-	outline: 0;
-	border: 0;
+    display: block;
+    width: 30px;
+    height: 27px;
+    background: transparent url(img/bg_direction_nav.png) no-repeat;
+    position: absolute;
+    top: 50%;
+    margin-top: -29px; /* if you change the arrow images, you may have to adjust this (1/2 height of arrow image) */
+    cursor: pointer;
+    text-decoration: none;
+    outline: 0;
+    border: 0;
+    z-index: 9999;
 }
 #simplemodal-container a.mb-scrollButtons.mb-left {
-	background-position: left top;
-	left: -45px;
+	left: 45px;
 }
 #simplemodal-container a.mb-scrollButtons.mb-right {
 	background-position: right top;
-	right: -45px;
+	right: 45px;
 }
 #simplemodal-container a.mb-scrollButtons.mb-left:hover {
 	background-position: left bottom;

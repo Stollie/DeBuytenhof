@@ -47,13 +47,25 @@ img { border: 0; }
  * Licensed under the MIT license:
  *   http://www.opensource.org/licenses/mit-license.php
  */
-#basic-modal-content { width: 950px; background: white; height: 600px; }
+/* Om de achtergrond afbeelding in te zetten*/
+#basic-modal-wrapper {
+    background: grey;
+    height: 600px;
+    width: 1000px;
+}
+
+#modal-content {
+    background: white;
+    height: 600px; 
+    margin: 0 auto;
+    width: 700px;
+}
 /* Overlay */
 #simplemodal-overlay {background-color:#000;}
 
 /* Container */
 #simplemodal-container { color:#bbb; padding:12px;}
-#simplemodal-container .simplemodal-data {padding:8px;}
+/*#simplemodal-container .simplemodal-data {padding:8px;}*/
 #simplemodal-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
 #simplemodal-container a {color:#ddd;}
 #simplemodal-container a.modalCloseImg {
