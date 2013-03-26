@@ -110,12 +110,17 @@ $(document).ready(function() {
                 if (data.key === 'varkensstal') {
                     $('#basic-modal-wrapper').modal({
                         onShow: function (dialog) {
+                            $("#zwaluwnest").show();
                             // Access elements inside the dialog
                             // Useful for binding events, initializing other plugins, etc.
 
                             $("#basic-modal-wrapper")
                                 .find("#slides")
                                 .movingBoxes({reducedSize: 0.8,fixedHeight: true, leftPadding: true,});
+                        },
+                        onClose: function(){
+                            $.modal.close();
+                            $("#zwaluwnest").hide();
                         }
                     });
 
