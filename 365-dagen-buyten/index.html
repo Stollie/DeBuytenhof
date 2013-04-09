@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>365 Dagen Buyten</title>
+        <link rel="stylesheet" type="text/css" href="movingboxes.css" />
+        <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+    <body>
+       <img src="img/nestje.png" id="zwaluwnest" />
+    <div id="container">
+        <div id="viewport">
+            <img src="img/zon.png" id="zon" />
+
+            <div class="parallax-layer" id="layer-1">
+                    <img src="img/wolken.png" style="" />
+            </div>
+            <div class="parallax-layer position-top">
+                    <img src="img/vogels.png" />
+            </div>
+            <div id="layer-content">
+                
+                <div id="boxes">
+                 <div> <!-- panel #1 -->
+                    <img src="img/365dagenbuyten_01.jpg" />
+                 </div>
+
+                 <div> <!-- panel #2 -->
+                    <img src="img/365dagenbuyten_02.jpg" />
+                 </div>
+                    
+                 <div> <!-- panel #3 -->
+                    <img src="img/365dagenbuyten_03.jpg" />
+                 </div>
+                    
+                 <div> <!-- panel #4 -->
+                    <img src="img/365dagenbuyten_04.jpg" />
+                 </div>
+                    
+                 <div> <!-- panel #5 -->
+                    <img src="img/365dagenbuyten_05.jpg" />
+                 </div>
+                    
+                 <div> <!-- panel #6 -->
+                    <img src="img/365dagenbuyten_06.jpg" />
+                 </div>
+                    
+                 <div> <!-- panel #7 -->
+                    <img src="img/365dagenbuyten_07.jpg" />
+                 </div>
+                    
+                 <div> <!-- panel #8 -->
+                    <img src="img/365dagenbuyten_08.jpg" />
+                 </div>
+                    
+                 <div> <!-- panel #9 -->
+                    <img src="img/365dagenbuyten_09.jpg" />
+                 </div>
+                    
+                 <div> <!-- panel #10 -->
+                    <img src="img/365dagenbuyten_10.jpg" />
+                 </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+    <map name="varkensstal">
+      <area shape="poly" data-name="varkensstal" coords="1,83,239,45,245,61,266,90,301,131,332,171,320,168,320,205,321,227,317,251,339,247,358,249,358,345,309,366,254,384,215,393,166,410,93,435,86,441,56,436,54,427,2,414" href="#" />
+    </map>
+    <map name="gaarde">
+      <area shape="poly" data-name="gaarde" coords="130,461,128,342,117,339,110,317,107,294,92,260,75,223,65,193,66,172,74,161,88,164,101,169,116,165,135,156,174,157,187,169,195,187,200,194,213,206,231,214,229,193,217,168,206,140,182,89,176,62,186,35,208,31,230,41,240,39,263,27,309,28,332,50,335,76,326,104,347,122,360,98,385,105,417,96,463,95,481,113,483,131,467,180,437,271,421,280,419,400,418,410,359,395,286,395,237,407,197,423" href="#" />
+    </map>
+    <map name="winkel">
+      <area shape="poly" data-name="winkel" coords="90,155,346,34,607,157,597,172,594,395,349,396,102,398,100,187" href="#" />
+    </map>
+
+    <div class="hide">
+        <audio preload="auto" id="winkel-geluid">
+            <source src="audio/4-De-Smaak-van-Buyten.mp3" type="audio/mp3" />
+            <source src="audio/4-De-Smaak-van-Buyten.ogg" type="audio/ogg" />
+        </audio>
+        <audio preload="auto" id="varkensstal-geluid">
+            <source src="audio/12-Varkens.mp3" type="audio/mp3" />
+            <source src="audio/12-Varkens.ogg" type="audio/ogg" />
+        </audio>
+        <audio preload="auto" id="achtergrond-geluid" autoplay loop>
+            <source src="audio/7-Vogels.mp3" type="audio/mp3" />
+        </audio>
+        
+        <div id="basic-modal-wrapper">
+            <div id="modal-content">
+                <div class="content">
+                    <p>Een leuk verhaal over de Bytenhof varksenstal.</p>
+                </div>
+                <ul id="slides">
+                  <li>
+                    <img src="img/alles_r1_c1.png" height="150" width="200" />
+                  </li>
+                  <li>
+                    <img src="img/alles_r1_c2.png" height="150" width="200" />
+                  </li>
+                  <li>
+                    <img src="img/alles_r1_c3.png" height="150" width="200" />
+                  </li>
+                  <li>
+                    <img src="img/alles_r1_c4.png" height="150" width="200" />
+                  </li>
+                  <li>
+                    <img src="img/alles_r1_c3.png" height="150" width="200" />
+                  </li>
+                  <li>
+                    <img src="img/alles_r1_c4.png" height="150" width="200" />
+                  </li>              
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>');</script>
+    
+    <script src="js/jquery.parallax.min.js"></script>
+    <script src="js/jquery.imagemapster.min.js"></script>
+    <script src="js/jquery.movingboxes.min.js"></script>
+    <script src="js/jquery.simplemodal.1.4.4.min.js"></script>
+    <script src="js/site.js"></script>
+    </body>
+</html>
