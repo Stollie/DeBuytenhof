@@ -75,7 +75,7 @@ $(document).ready(function() {
         // callback when MovingBoxes has completed initialization
         initialized: function(e, slider, tar){
             // image map laden
-            //$.iniMapster();
+            $.iniMapster();
 
             // Mute knop toevoegen in menu
             //$.addAudioControl();
