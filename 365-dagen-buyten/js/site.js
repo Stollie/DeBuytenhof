@@ -78,7 +78,7 @@ $(document).ready(function() {
             $.iniMapster();
 
             // Mute knop toevoegen in menu
-            //$.addAudioControl();
+            $.addAudioControl();
         },
         // callback upon change panel initialization
         initChange: function(e, slider, tar){
@@ -101,7 +101,7 @@ $(document).ready(function() {
    $.iniMapster = function() {
         //console.log("mapster");
         $(".mapit").mapster({
-             mapKey: 'data-name',
+            "mapKey": 'data-name',
             "fillColor": "E9F4FB",
             "fillOpacity": 0.5,
             "isSelectable": false,
