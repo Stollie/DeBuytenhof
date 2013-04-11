@@ -112,6 +112,7 @@ $(document).ready(function() {
             "mapKey": 'data-name',
             "fillColor": "E9F4FB",
             "fillOpacity": 0.5,
+            "highlight": false,
             "isSelectable": false,
             "onClick": function (data) {
                 //document.getElementById(data.key).play();
@@ -172,4 +173,15 @@ $(document).ready(function() {
             }
         });
     };
+    
+    var $modal_content = $("#modal-content");
+    $modal_content.on("click", "area", function(e) {
+        e.preventDefault();
+        $modal_content
+            .find("img:visible")
+            .fadeOut("fast")
+            .end()
+            .find(e.target.hash+"-slide")
+            .fadeIn("fast");
+    });
 })(jQuery);
