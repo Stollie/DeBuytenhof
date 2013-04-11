@@ -126,14 +126,12 @@ $(document).ready(function() {
             },
             "onMouseover": function(data){
                 if ($("#"+data.key+"-geluid").size() > 0) {
-                    var elements = document.getElementsByTagName("audio");
-            
-                    for (var i = 0; i < elements.length; i++) {
-                        elements[i].muted = true;
-                    }               
                     document.getElementById(data.key+"-geluid").muted = false;
                     document.getElementById(data.key+"-geluid").play();
                 }
+            },
+            "onMouseout": function(data){
+                document.getElementById(data.key+"-geluid").muted = true;
             },
             "areas":  [{
                key: "TX", 
