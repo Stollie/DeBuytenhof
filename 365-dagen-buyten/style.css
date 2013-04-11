@@ -1,4 +1,4 @@
-body { padding: 0; margin: 0; }
+body { font-family: 'Open Sans', sans-serif; padding: 0; margin: 0; background-color: #f3fafe;}
 img { border: 0; }
 
 #viewport {
@@ -37,6 +37,15 @@ img { border: 0; }
     z-index: 2000;
     }
     #zwaluwnest:hover { opacity: 1; }
+
+    #welkomstekst {
+        z-index: 9999;
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        margin-top: -37px; /* Half the height */
+        margin-left: -331px; /* Half the width */
+     }
     
 #mute-button { margin-left: 15px; cursor: pointer; }
 
@@ -51,29 +60,27 @@ img { border: 0; }
  */
 /* Om de achtergrond afbeelding in te zetten*/
 #basic-modal-wrapper {
-    background: grey;
-    height: 700px;
+    height: 610px;
     width: 1000px;
 }
 
 #modal-content {
-    background: white;
-    height: 700px; 
     margin: 0 auto;
-    width: 700px;
+    width: 1000px;
+    overflow: hidden;
 }
 /* Overlay */
 #simplemodal-overlay {background-color:#000;}
 
 /* Container */
-#simplemodal-container { color:#bbb; padding:12px;}
+#simplemodal-container { color:#bbb; padding:12px; overflow: hidden !important;}
 /*#simplemodal-container .simplemodal-data {padding:8px;}*/
 #simplemodal-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
 #simplemodal-container a {color:#ddd;}
 #simplemodal-container a.modalCloseImg {
     background:url("img/x.png") no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute; cursor:pointer;
-    right: 20px;
-    top: 20px;
+    right: 192px;
+    top: 12px;
 }
 #simplemodal-container h3 {color:#84b8d9;}
 

@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8" />
         <title>365 Dagen Buyten</title>
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" type="text/css" href="movingboxes.css" />
         <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
     <body>
-       <img src="img/nestje.png" id="zwaluwnest" />
     <div id="container">
         <div id="viewport">
             <img src="img/zon.png" id="zon" />
@@ -64,6 +64,9 @@
             </div>
         </div>
     </div>
+    
+    <img src="img/welkomstekst.png" class="hide" id="welkomstekst" />
+    
 <map name="stallen" id="stallen">
   <area shape="poly" data-name="stallen" coords="491,469,517,472,518,466,532,468,530,473,563,477,560,513,527,506,528,523,514,521,516,505,488,501" href="#" />
 </map>
@@ -105,39 +108,48 @@
             <source src="audio/4-De-Smaak-van-Buyten.mp3" type="audio/mp3" />
             <source src="audio/4-De-Smaak-van-Buyten.ogg" type="audio/ogg" />
         </audio>
+        <audio preload="auto" id="tractor-geluid">
+            <source src="audio/tractor.mp3" type="audio/mp3" />
+            <source src="audio/tractor.ogg" type="audio/ogg" />
+        </audio>
+        <audio preload="auto" id="bijen-geluid">
+            <source src="audio/bijen.mp3" type="audio/mp3" />
+            <source src="audio/bijen.ogg" type="audio/ogg" />
+        </audio>        
         <audio preload="auto" id="stallen-geluid">
             <source src="audio/12-Varkens.mp3" type="audio/mp3" />
             <source src="audio/12-Varkens.ogg" type="audio/ogg" />
         </audio>
+        <audio preload="auto" id="theeschenkerij-geluid">
+            <source src="audio/kopjes.mp3" type="audio/mp3" />
+            <source src="audio/kopjes.ogg" type="audio/ogg" />
+        </audio>
+        <audio preload="auto" id="boomgaard-geluid">
+            <source src="audio/boomgaard.mp3" type="audio/mp3" />
+            <source src="audio/boomgaard.ogg" type="audio/ogg" />
+        </audio>
+        <audio preload="auto" id="aardbeienveld-geluid">
+            <source src="audio/aardbeienveld.mp3" type="audio/mp3" />
+            <source src="audio/aardbeienveld.ogg" type="audio/ogg" />
+        </audio>        
+        <audio preload="auto" id="kruidentuin-geluid">
+            <source src="audio/kruidentuin.mp3" type="audio/mp3" />
+            <source src="audio/kruidentuin.ogg" type="audio/ogg" />
+        </audio>
+        <audio preload="auto" id="moestuin-geluid">
+            <source src="audio/moestuin.mp3" type="audio/mp3" />
+            <source src="audio/moestuin.ogg" type="audio/ogg" />
+        </audio>
+         <audio preload="auto" id="pluktuin-geluid">
+            <source src="audio/bloementuin.mp3" type="audio/mp3" />
+            <source src="audio/bloementuin.ogg" type="audio/ogg" />
+        </audio>       
         <audio preload="auto" id="achtergrond-geluid" autoplay loop>
             <source src="audio/7-Vogels.mp3" type="audio/mp3" />
-        </audio>
-        
+        </audio>  
         <div id="basic-modal-wrapper">
             <div id="modal-content">
-                <div class="content">
-                    <p>Een leuk verhaal over de Bytenhof varksenstal.</p>
-                </div>
-                <ul id="slides">
-                  <li>
-                    <img src="img/alles_r1_c1.png" height="150" width="200" />
-                  </li>
-                  <li>
-                    <img src="img/alles_r1_c2.png" height="150" width="200" />
-                  </li>
-                  <li>
-                    <img src="img/alles_r1_c3.png" height="150" width="200" />
-                  </li>
-                  <li>
-                    <img src="img/alles_r1_c4.png" height="150" width="200" />
-                  </li>
-                  <li>
-                    <img src="img/alles_r1_c3.png" height="150" width="200" />
-                  </li>
-                  <li>
-                    <img src="img/alles_r1_c4.png" height="150" width="200" />
-                  </li>              
-                </ul>
+                <img src="img/popups/Popup-Bemesten.png" />
             </div>
         </div>
 
@@ -150,5 +162,19 @@
     <script src="js/jquery.movingboxes.min.js"></script>
     <script src="js/jquery.simplemodal.1.4.4.min.js"></script>
     <script src="js/site.js"></script>
+    <!-- Piwik -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u=(("https:" == document.location.protocol) ? "https" : "http") + "://www.remcoraaijmakers.nl/statistics//";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', 4]);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+        g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <!-- End Piwik Code -->
     </body>
 </html>

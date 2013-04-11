@@ -41,9 +41,10 @@ $(document).ready(function() {
 
         // **** Appearance ****
         // 
+        frameDuration: 40,
         leftPadding: false,
         // start with this panel
-        startPanel: 2,
+        startPanel: 7,
         // non-current panel size: 80% of panel size
         reducedSize: 1,
         // if true, slider height set to max panel height; if false, height will auto adjust.
@@ -79,10 +80,18 @@ $(document).ready(function() {
 
             // Mute knop toevoegen in menu
             $.addAudioControl();
+            
+            /* welkoms tekst die 8 sec zichtbaar is na init van movingboxes */
+            var $welkomstekst = $("#welkomstekst");
+            $welkomstekst.show();
+            setTimeout(function(){
+                $welkomstekst.hide();
+            }, 8000); 
         },
         // callback upon change panel initialization
         initChange: function(e, slider, tar){
             // alert( 'Changing panels to #' + tar );
+
         },
         // callback before any animation occurs
         beforeAnimation: function(e, slider, tar){},
@@ -90,9 +99,8 @@ $(document).ready(function() {
         completed: function(e, slider, tar){
             // get name from title
             // var name = slider.$panels.eq(tar-1).find('h2').text().split(' ')[0]; 
-            // alert( "Now on " + name + "'s panel" );
+            // alert( "Now on " + name + "'s panel" );           
         }
-
     });
 
 });
@@ -107,20 +115,10 @@ $(document).ready(function() {
             "isSelectable": false,
             "onClick": function (data) {
                 //document.getElementById(data.key).play();
-                if (data.key === 'varkensstal') {
+                if (data.key === 'boomgaard') {
                     $('#basic-modal-wrapper').modal({
-                        onShow: function (dialog) {
-                            $("#zwaluwnest").show();
-                            // Access elements inside the dialog
-                            // Useful for binding events, initializing other plugins, etc.
-
-                            $("#basic-modal-wrapper")
-                                .find("#slides")
-                                .movingBoxes({reducedSize: 0.8,fixedHeight: true, leftPadding: true,});
-                        },
                         onClose: function(){
                             $.modal.close();
-                            $("#zwaluwnest").hide();
                         }
                     });
 
@@ -128,9 +126,24 @@ $(document).ready(function() {
             },
             "onMouseover": function(data){
                 if ($("#"+data.key+"-geluid").size() > 0) {
+                    var elements = document.getElementsByTagName("audio");
+            
+                    for (var i = 0; i < elements.length; i++) {
+                        elements[i].muted = true;
+                    }               
+                    document.getElementById(data.key+"-geluid").muted = false;
                     document.getElementById(data.key+"-geluid").play();
                 }
-            }
+            },
+            "areas":  [{
+               key: "TX", 
+               toolTip: "Don't mess with Texas",
+               selected: true
+            },
+            { 
+               key: "AL",
+               selected: true
+            }]
         });
     };
     
@@ -146,7 +159,7 @@ $(document).ready(function() {
             if ($mute_button.data("muted") === false) {
 
                 for (var i = 0; i < elements.length; i++) {
-                  elements[i].muted = true;
+                    elements[i].muted = true;
                 }
 
                 $mute_button.attr('src', 'img/icons/sound_mute.png').data("muted", true);
@@ -155,7 +168,8 @@ $(document).ready(function() {
                 $mute_button.attr('src', 'img/icons/sound.png').data("muted", false);
 
                 for (var i = 0; i < elements.length; i++) {
-                  elements[i].muted = false;
+                    elements[i].muted = false;
+                    elements[i].volume = 1;
                 }
             }
         });

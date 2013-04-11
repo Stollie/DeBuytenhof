@@ -63,30 +63,33 @@ change .current class name using plugin option, currentPanel : 'current' */
 }
 /*** Controls added below the panels ***/
 #container .mb-controls {
-	margin: 0 auto;
-	text-align: center;
-	background: #ccc;
-	position: relative;
-	z-index: 100;
+    font-size: 14px;
+    margin: 0 auto;
+    text-align: center;
+    background: #fff;
+    position: relative;
+    z-index: 100;
+    text-transform: uppercase;
+    height: 30px;
+    padding-top: 5px;        
 }
 #container .mb-controls a {
-	color: #666;
-	font: 14px/2 Georgia, Serif;
-	display: inline-block;
-	text-decoration: none;
-	padding: 2px;
-	margin: 0 5px 0 0;
-	text-align: center;
-	outline: 0;
+    color: #333;
+    display: inline-block;
+    text-decoration: none;
+    padding: 2px;
+    margin: 0 15px 0 0;
+    text-align: center;
+    outline: 0;
 }
 #container .mb-controls a:hover {
 	color: black;
 }
 #container .mb-controls a.current {
-	color: white;
+	color: black;
 }
 #container .mb-active-slider .mb-controls {
-	background: #333;
+/*	background: #333;*/
 }
 
 /* In de simple modal */
