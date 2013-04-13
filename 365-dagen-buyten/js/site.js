@@ -125,50 +125,53 @@ $(document).ready(function() {
                 }
             },
             "onMouseover": function(data){
-                if ($("#"+data.key+"-geluid").size() > 0) {
-                    document.getElementById(data.key+"-geluid").muted = false;
-                    document.getElementById(data.key+"-geluid").play();
+                var key = data.key;
+                key = key.replace("-hover","");
+                console.log(key);
+                if ($("#"+key+"-geluid").size() > 0) {
+                    document.getElementById(key+"-geluid").muted = false;
+                    document.getElementById(key+"-geluid").play();
                 }
             },
             "onMouseout": function(data){
-                document.getElementById(data.key+"-geluid").muted = true;
+                document.getElementById(data.key.replace("-hover","")+"-geluid").muted = true;
             },
             "areas":  [
             {
                "key": "stallen", 
-               "highlight": false,
+               "highlight": false
             },
             { 
                "key": "aardbeien", 
-               "highlight": false,
+               "highlight": false
             },
             {
                "key": "tractor", 
-               "highlight": false,
+               "highlight": false
             },
             { 
                "key": "boomgaard", 
-               "highlight": false,
+               "highlight": false
             },
             {
                "key": "bijen", 
-               "highlight": false,
+               "highlight": false
             },
             { 
                "key": "winkel", 
-               "highlight": false,
+               "highlight": false
             },
             {
                "key": "kruidentuin", 
-               "highlight": false,
+               "highlight": false
             },
             { 
                "key": "pluktuin", 
-               "highlight": false,
+               "highlight": false
             },
             {
                "key": "moestuin", 
-               "highlight": false,
+               "highlight": false
             }           
             ]
         });
@@ -201,14 +204,16 @@ $(document).ready(function() {
             }
         });
     };
-    
+    /*
+     * Simpele wissel tussen afbeeldingen in de modal.
+     */
     var $modal_content = $("#modal-content");
     $modal_content.on("click", "area", function(e) {
         e.preventDefault();
         $modal_content
             .find("img:visible")
             .fadeOut("fast")
-            .end()
+                .end()
             .find(e.target.hash+"-slide")
             .fadeIn("fast");
     });
