@@ -112,7 +112,6 @@ $(document).ready(function() {
             "mapKey": 'data-name',
             "fillColor": "E9F4FB",
             "fillOpacity": 0.5,
-            "highlight": false,
             "isSelectable": false,
             "onClick": function (data) {
                 //document.getElementById(data.key).play();
@@ -134,15 +133,44 @@ $(document).ready(function() {
             "onMouseout": function(data){
                 document.getElementById(data.key+"-geluid").muted = true;
             },
-            "areas":  [{
-               key: "TX", 
-               toolTip: "Don't mess with Texas",
-               selected: true
+            "areas":  [
+            {
+               "key": "stallen", 
+               "highlight": false,
             },
             { 
-               key: "AL",
-               selected: true
-            }]
+               "key": "aardbeien", 
+               "highlight": false,
+            },
+            {
+               "key": "tractor", 
+               "highlight": false,
+            },
+            { 
+               "key": "boomgaard", 
+               "highlight": false,
+            },
+            {
+               "key": "bijen", 
+               "highlight": false,
+            },
+            { 
+               "key": "winkel", 
+               "highlight": false,
+            },
+            {
+               "key": "kruidentuin", 
+               "highlight": false,
+            },
+            { 
+               "key": "pluktuin", 
+               "highlight": false,
+            },
+            {
+               "key": "moestuin", 
+               "highlight": false,
+            }           
+            ]
         });
     };
     
